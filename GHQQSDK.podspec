@@ -23,7 +23,7 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig     = { 'skip_validation' => true , 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
   s.user_target_xcconfig    = { 'skip_validation' => true , 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
   s.vendored_frameworks     = 'GHQQSDK/Classes/TencentOpenAPI.framework'
-  s.source_files            = 'GHQQSDK/Classes/TencentOpenAPI.framework/Headers/TencentOpenApiUmbrellaHeader.h'
+  s.source_files            = 'GHQQSDK/Classes/TencentOpenAPI.framework/Headers/*.h'
   s.requires_arc            = true
   s.frameworks              = 'UIKit', 'Foundation', 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony', 'WebKit'
   s.libraries               = 'iconv', 'sqlite3', 'stdc++', 'z'
