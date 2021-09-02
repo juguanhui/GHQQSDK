@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GHQQSDK'
-  s.version          = '3.5.5.122'
+  s.version          = '3.5.5.123'
   s.summary          = 'GHQQSDK封装最新版本的QQSDK。'
   s.requires_arc     = true
   s.homepage         = 'https://github.com/juguanhui/GHQQSDK'
