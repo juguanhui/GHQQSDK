@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GHQQSDK'
-  s.version          = '3.5.5.121'
+  s.version          = '3.5.5.122'
   s.summary          = 'GHQQSDK封装最新版本的QQSDK。'
   s.requires_arc     = true
   s.homepage         = 'https://github.com/juguanhui/GHQQSDK'
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/juguanhui/GHQQSDK.git', :tag => s.version.to_s }
   s.frameworks              = 'UIKit', 'Foundation', 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony', 'WebKit'
   s.libraries               = 'iconv', 'sqlite3', 'stdc++', 'z'
-  s.ios.vendored_frameworks = 'GHQQSDK/Classes/TencentOpenAPI.framework'
+  s.vendored_frameworks = 'GHQQSDK/TencentOpenAPI.framework'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -31,8 +31,11 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.ios.deployment_target = '9.0'
-  valid_archs = ['armv7', 'x86_64', 'arm64']
+  valid_archs = ['armv7', 'i386', 'x86_64', 'arm64']
   s.xcconfig = {
     'VALID_ARCHS' =>  valid_archs.join(' '),
   }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 end
