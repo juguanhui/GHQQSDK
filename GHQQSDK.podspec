@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GHQQSDK'
-  s.version          = '3.5.5.125'
+  s.version          = '3.5.5.121.x'
   s.summary          = 'GHQQSDK封装最新版本的QQSDK。'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
