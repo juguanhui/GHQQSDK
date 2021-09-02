@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GHQQSDK'
-  s.version          = '3.5.5.123'
+  s.version          = '3.5.5.124'
   s.summary          = 'GHQQSDK封装最新版本的QQSDK。'
   s.requires_arc     = true
   s.homepage         = 'https://github.com/juguanhui/GHQQSDK'
@@ -16,15 +16,10 @@ Pod::Spec.new do |s|
   s.author           = { 'juguanhui' => 'juguanhui@126.com' }
   s.platform         = :ios, "9.0"
   s.source           = { :git => 'https://github.com/juguanhui/GHQQSDK.git', :tag => s.version.to_s }
+  s.vendored_frameworks = 'GHQQSDK/TencentOpenAPI.framework'
+  s.source_files        = 'GHQQSDK/TencentOpenAPI.framework/Headers/*.h'
   s.frameworks              = 'UIKit', 'Foundation', 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony', 'WebKit'
   s.libraries               = 'iconv', 'sqlite3', 'stdc++', 'z'
-  s.vendored_frameworks = 'GHQQSDK/TencentOpenAPI.framework'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -35,8 +30,8 @@ TODO: Add long description of the pod here.
   s.xcconfig = {
     'VALID_ARCHS' =>  valid_archs.join(' '),
   }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.static_framework = true
+
+  s.pod_target_xcconfig = { 'skip_validation' => true, 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'skip_validation' => true, 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
 end
